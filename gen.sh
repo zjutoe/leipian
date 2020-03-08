@@ -6,4 +6,5 @@ structured=.${input}.py
 
 cat $input | python entries.py > $structured
 
-python $structured > $output
+python $structured > ${output}.nopunct
+python punctuate.py < ${output}.nopunct > $output
